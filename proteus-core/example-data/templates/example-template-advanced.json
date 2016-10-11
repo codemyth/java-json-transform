@@ -1,0 +1,11 @@
+{
+	"First Name": "First Name",
+	"Last Name": "Last Name",
+	"Address": {
+		"Street": "Address",
+		"City": "City",
+		"Country": "Country",
+		"District": "District"
+	},
+	"Rentals": "asSet(Rentals.Film Title AS Film Title,Rentals.Payments AS Payments)"
+}
