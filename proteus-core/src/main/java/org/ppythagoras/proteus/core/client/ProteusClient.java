@@ -132,4 +132,113 @@ public class ProteusClient {
 		return transform(input, template.toString());
 	}
 
+	/**
+	 * This method is for getting better performance when you want the input
+	 * json to be transform into several different forms. Order of template
+	 * texts given should be known by the caller, to be able to retrieve the
+	 * output back in the same order.
+	 * 
+	 * Endpoint method for transforming list of Json objects based on a template
+	 * text.
+	 * 
+	 * @param input
+	 * @param templateText
+	 * @return
+	 */
+	public List<List<JSONObject>> transform(List<JSONObject> input, String... templateText) {
+
+		List<List<JSONObject>> output = new ArrayList();
+
+		for (int i = 0; i < templateText.length; i++) {
+			List<JSONObject> list = new ArrayList();
+			output.add(list);
+		}
+
+		for (JSONObject item : input) {
+			for (int i = 0; i < templateText.length; i++) {
+				output.get(i).add(transform(item, templateText[i]));
+			}
+		}
+
+		return output;
+	}
+
+	/**
+	 * This method is for getting better performance when you want the input
+	 * json to be transform into several different forms. Order of template
+	 * texts given should be known by the caller, to be able to retrieve the
+	 * output back in the same order.
+	 * 
+	 * Endpoint method for transforming list of Json objects based on a Json
+	 * template.
+	 * 
+	 * @param input
+	 * @param template
+	 * @return
+	 */
+	public List<List<JSONObject>> transform(List<JSONObject> input, JSONObject... template) {
+
+		String[] templateText = new String[template.length];
+
+		for (int i = 0; i < template.length; i++) {
+			templateText[i] = template[i].toString();
+		}
+
+		return transform(input, templateText);
+	}
+
+	/**
+	 * This method is for getting better performance when you want the input
+	 * json to be transform into several different forms. Order of template
+	 * texts given should be known by the caller, to be able to retrieve the
+	 * output back in the same order.
+	 * 
+	 * Endpoint method for transforming a Json array based on a template text.
+	 * 
+	 * @param input
+	 * @param templateText
+	 * @return
+	 */
+	public List<JSONArray> transform(JSONArray input, String... templateText) {
+
+		List<JSONArray> output = new ArrayList();
+
+		for (int i = 0; i < templateText.length; i++) {
+			JSONArray jsonarray = new JSONArray();
+			output.add(jsonarray);
+		}
+
+		for (int i = 0; i < input.length(); i++) {
+			JSONObject item = input.optJSONObject(i);
+			for (int j = 0; j < templateText.length; j++) {
+				output.get(j).put(transform(item, templateText[j]));
+			}
+		}
+
+		return output;
+	}
+
+	/**
+	 * This method is for getting better performance when you want the input
+	 * json to be transform into several different forms. Order of template
+	 * texts given should be known by the caller, to be able to retrieve the
+	 * output back in the same order.
+	 * 
+	 * Endpoint method for transforming a Json array based on a Json template.
+	 * 
+	 * @param input
+	 * @param template
+	 * @return
+	 */
+	public List<JSONArray> transform(JSONArray input, JSONObject... template) {
+
+		String[] templateText = new String[template.length];
+
+		for (int i = 0; i < template.length; i++) {
+			templateText[i] = template[i].toString();
+		}
+
+		return transform(input, templateText);
+	}
+
 }
