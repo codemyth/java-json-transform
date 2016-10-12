@@ -7,5 +7,5 @@
 		"Country": "Country",
 		"District": "District"
 	},
-	"Rentals": "asSet(Rentals.Film Title AS Film Title,Rentals.Payments AS Payments)"
+	"Rentals": "_asSet(Rentals.Film Title AS Film Title,Rentals.Payments AS Payments)"
 }

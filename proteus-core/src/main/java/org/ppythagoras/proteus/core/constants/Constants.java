@@ -19,7 +19,7 @@ package org.ppythagoras.proteus.core.constants;
 
 public class Constants {
 
-	public static final String AS_SET = "asSet";
+	public static final String _AS_SET = "_asSet";
 	public static final String AS_SPACE = " AS ";
 	public static final String DOT = "DOT";
 

@@ -53,10 +53,10 @@ public class Transformer {
 				List<Object> list;
 				String findKey = (String) value;
 
-				if (findKey.startsWith(Constants.AS_SET)) {
+				if (findKey.startsWith(Constants._AS_SET)) {
 					Map<String, List<Object>> intermediateMap = new HashMap();
 					int referenceLength = 0;
-					for (String subkey : findKey.substring(6, findKey.length() - 1).split(",")) {
+					for (String subkey : findKey.substring(7, findKey.length() - 1).split(",")) {
 
 						String[] parts = subkey.split(Constants.AS_SPACE);
 
