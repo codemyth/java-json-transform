@@ -4,9 +4,7 @@ Proteus is a small library that can be used to transform a JSON data of one stru
 
 
 ##Up and Running
-Proteus has no configuration. It can be added to any existing java project, by just adding it to the build path
 
-- Download proteus-core and add it as source or jar to any java project
 - Get an instance of proteus client and start transforming JSONs
 ```
 // get an instance of proteus client
@@ -22,11 +20,6 @@ output_jsonarray = proteus.transform(input_jsonarray, template);
 - You can play with Example.java to see the transformation in action (for the included example Json input and templates)
 
 
-##Dependencies
-
-- json (org.json) (developed in json-20160810)
-
-
 ##Template Definition Guide
 
 ```
@@ -39,7 +32,7 @@ output_jsonarray = proteus.transform(input_jsonarray, template);
 		"Country": "Country",
 		"District": "District"
 	},
-	"Rentals": "asSet(Rentals.Film Title AS Film Title,Rentals.Payments AS Payments)"
+	"Rentals": "_asSet(Rentals.Film Title AS Film Title,Rentals.Payments AS Payments)"
 }
 ```
 

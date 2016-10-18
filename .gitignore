@@ -3,3 +3,4 @@ lib
 .project
 .classpath
 .settings
+/target/

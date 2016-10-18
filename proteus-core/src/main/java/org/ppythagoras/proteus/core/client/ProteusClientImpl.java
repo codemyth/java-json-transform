@@ -27,7 +27,7 @@ import org.ppythagoras.proteus.core.processor.Transformer;
  * @author Arun Kumar Selvaraj
  *
  */
-public class ProteusClientImpl {
+class ProteusClientImpl {
 
 	ProteusClientImpl() {
 		super();
